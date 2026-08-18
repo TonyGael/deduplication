@@ -7,22 +7,27 @@
 </head>
 <body>
 
+  <div id="selector-idioma">
+    <button class="btn-idioma" data-lang="es" title="Español (Argentina/España)">🇦🇷🇪🇸</button>
+    <button class="btn-idioma" data-lang="en" title="English">🇬🇧</button>
+  </div>
+
   <header>
-    <h1>Deduplicación Semántica</h1>
-    <p>Subí un documento (.txt, .docx o .pdf) y detectá contenido redundante usando embeddings.</p>
+    <h1 data-i18n="titulo">Deduplicación Semántica</h1>
+    <p data-i18n="subtitulo">Subí un documento (.txt, .docx o .pdf) y detectá contenido redundante usando embeddings.</p>
   </header>
 
   <section id="seccion-carga">
     <input type="file" id="input-archivo" accept=".txt,.docx,.pdf">
-    <button id="btn-extraer">1. Extraer texto</button>
+    <button id="btn-extraer" data-i18n="btn_extraer">1. Extraer texto</button>
   </section>
 
   <section id="seccion-umbral" class="oculto">
     <label for="slider-umbral">
-      Umbral de similitud: <span id="valor-umbral">0.87</span>
+      <span data-i18n="label_umbral">Umbral de similitud:</span> <span id="valor-umbral">0.87</span>
     </label>
     <input type="range" id="slider-umbral" min="0.70" max="0.99" step="0.01" value="0.87">
-    <button id="btn-deduplicar">2. Deduplicar</button>
+    <button id="btn-deduplicar" data-i18n="btn_deduplicar">2. Deduplicar</button>
   </section>
 
   <section id="seccion-resultados" class="oculto">
@@ -34,11 +39,11 @@
 
     <div class="columnas">
       <div class="columna">
-        <h2>Documento original</h2>
+        <h2 data-i18n="col_original">Documento original</h2>
         <div id="chunks-original"></div>
       </div>
       <div class="columna">
-        <h2>Documento depurado (lo vital)</h2>
+        <h2 data-i18n="col_depurado">Documento depurado (lo vital)</h2>
         <pre id="documento-depurado"></pre>
       </div>
     </div>
