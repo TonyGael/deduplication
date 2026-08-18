@@ -2,6 +2,8 @@
 
 Práctica de AI Engineering orientada a la deduplicación semántica de texto: se sube un documento (`.txt`, `.docx` o `.pdf`), se divide en párrafos, se generan embeddings de cada uno y se comparan por similitud coseno para identificar contenido redundante, aunque esté redactado de forma distinta.
 
+![Comparación entre documento original y documento depurado tras aplicar la deduplicación semántica](doc/images/image_001.png)
+
 El proyecto está dividido en dos partes independientes:
 
 - **backend/**: API en FastAPI que extrae texto, genera embeddings y ejecuta el algoritmo de deduplicación.
@@ -58,3 +60,12 @@ El archivo `requirements.txt` se mantiene actualizado con `pip freeze > requirem
 ## Estado del proyecto
 
 En desarrollo. Este README se irá ampliando a medida que se sumen módulos (por ejemplo, soporte de OCR para PDFs escaneados o un paso de resumen adicional).
+
+## TODO
+
+- [ ] Mejorar README (secciones más detalladas, ejemplos de uso, capturas adicionales)
+- [ ] Documentar con comentarios inline los bloques de código de cada archivo (backend y frontend)
+- [ ] Agregar diagrama de flujo del pipeline (ASCII art o similar) para visualizar extracción → chunking → embeddings → dedup
+- [ ] Graficar la matriz de similitud coseno para visualizar qué chunks se consideran "cerca" o "lejos" entre sí, y así justificar mejor el umbral elegido
+
+> Checklist de pendientes técnicos. Se actualiza al cierre de cada sesión de trabajo, antes de hacer commit/push al repo.
