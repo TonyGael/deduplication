@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Deduplicación Semántica de Documentos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Deduplicación Semántica</h1>
+    <p>Subí un documento (.txt, .docx o .pdf) y detectá contenido redundante usando embeddings.</p>
+  </header>
+
+  <section id="seccion-carga">
+    <input type="file" id="input-archivo" accept=".txt,.docx,.pdf">
+    <button id="btn-extraer">1. Extraer texto</button>
+  </section>
+
+  <section id="seccion-umbral" class="oculto">
+    <label for="slider-umbral">
+      Umbral de similitud: <span id="valor-umbral">0.87</span>
+    </label>
+    <input type="range" id="slider-umbral" min="0.70" max="0.99" step="0.01" value="0.87">
+    <button id="btn-deduplicar">2. Deduplicar</button>
+  </section>
+
+  <section id="seccion-resultados" class="oculto">
+    <div class="stats">
+      <span id="stat-original"></span>
+      <span id="stat-unicos"></span>
+      <span id="stat-eliminados"></span>
+    </div>
+
+    <div class="columnas">
+      <div class="columna">
+        <h2>Documento original</h2>
+        <div id="chunks-original"></div>
+      </div>
+      <div class="columna">
+        <h2>Documento depurado (lo vital)</h2>
+        <pre id="documento-depurado"></pre>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
