@@ -63,3 +63,24 @@ button:disabled {
   border-radius: 6px;
   padding: 1rem;
 }
+
+#selector-idioma {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-idioma {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.btn-idioma.activo {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
